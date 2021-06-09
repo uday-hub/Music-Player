@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <img src="images/snake.jpg" id="background" />
+    <audio src="songs/Snake - MC STAN 128 Kbps.mp3" id="song"></audio>
+
+    <div class="container">  
+        <div class="box"></div>      
+        <img src="images/snake.jpg" id="thumbnail" />
+        
+        <img src="icons/play.png" onclick="playPause()" id="play-pause" />
+        <img src="icons/forward.png" onclick="nextSong()" id="next-song" />
+        <img src="icons/backward.png" onclick="previousSong()" id="previous-song" />
+
+        <div class="song-artist">MC STAN</div>
+        <div class="song-title">Snack</div>
+
+        <!-- Input element for progress bar - min=0 starting value of every song - max length will change per song so leave empty -->
+        
+        <input 
+            type="range" 
+            id="progress-bar" 
+            min="0" 
+            max="" 
+            value="0" 
+            onchange="changeProgressBar()"
+        />
+
+        <div class="currentTime"></div>
+        <div class="durationTime"></div>
+    </div>
+
+    <script src="player.js"></script>
+</body>
+</html>
